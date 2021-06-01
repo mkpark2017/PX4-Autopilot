@@ -281,7 +281,7 @@ endif()
 # If using catkin, Python 2 is found since it points
 # to the Python libs installed with the ROS distro
 if (NOT CATKIN_DEVEL_PREFIX)
-	find_package(PythonInterp 3)
+	find_package(PythonInterp 2 REQUIRED)
 	# We have a custom error message to tell users how to install python3.
 	if (NOT PYTHONINTERP_FOUND)
 		message(FATAL_ERROR "Python 3 not found. Please install Python 3:\n"
@@ -289,7 +289,7 @@ if (NOT CATKIN_DEVEL_PREFIX)
 			"    macOS: brew install python")
 	endif()
 else()
-	find_package(PythonInterp REQUIRED)
+	find_package(PythonInterp 2 REQUIRED)
 endif()
 
 option(PYTHON_COVERAGE "Python code coverage" OFF)
